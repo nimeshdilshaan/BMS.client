@@ -1,12 +1,13 @@
 import "./App.css";
 import TestPage from "./pages/new";
+import TestPage2 from "./pages/feedbck";
 
 function App() {
   return (
-
-    <TestPage />
-
-  
+    <div>
+      <TestPage />
+      <TestPage2 />
+    </div>
   );
 }
 
