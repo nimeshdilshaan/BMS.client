@@ -11,6 +11,10 @@ export default function Dashboard() {
         <Card title="Today Attendance" value="112" />
         <Card title="Pending Fees" value="5" />
       </div>
+
+      <div className="bg-red-500 p-4 text-white">
+  Tailwind Test - if red, it's working!
+</div>
     </div>
   );
 }
