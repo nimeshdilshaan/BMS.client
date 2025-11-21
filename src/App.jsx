@@ -1,21 +1,84 @@
-import React from 'react'
-import { Route, Routes } from 'react-router'
-import Dashboard from './pages/Dashboard.jsx'
-import Log from './pages/Login.jsx'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Log from "./pages/Login";
+import MainLayout from "./layout/MainLayout";
+import Students from "./pages/Students/ManageStudents";
+import Rooms from "./pages/Rooms/RoomList";
+import Fees from "./pages/Fees/FeeStatus";
+import Attendance from "./pages/Attendance/MarkAttendance";
+
+
+
+
 
 
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Dashboard />} />
-        <Route path='/login' element={<Log />} />
+    <Routes>
+      {/* Login page without layout */}
+      <Route path="/" element={<Log />} />
+
+      {/* Dashboard */}
+      <Route
+        path="/dash"
+        element={
+          <MainLayout>
+            <Dashboard />
+          </MainLayout>
+        }
+      />
+
+      {/* students */}
+      <Route
+        path="/students"
+        element={
+          <MainLayout>
+            <Students />
+          </MainLayout>
+        }
+      />
+
+      {/* Rooms */}
+      <Route
+        path="/rooms"
+        element={
+          <MainLayout>
+            <Rooms />
+          </MainLayout>
+        }
+      />
+
+      {/* Fees */}
+      <Route
+        path="/fees"
+        element={
+          <MainLayout>
+            <Fees />
+          </MainLayout>
+        }
+      />
 
 
-      </Routes>
-      
-    </div>
-  )
-}
+      {/* Attendance */}
+      <Route
+        path="/attendance"
+        element={
+          <MainLayout>
+            <Attendance />
+          </MainLayout>
+        }
+      />
 
-export default App
+
+
+
+
+
+    </Routes>
+
+    
+  );
+};
+
+export default App;
